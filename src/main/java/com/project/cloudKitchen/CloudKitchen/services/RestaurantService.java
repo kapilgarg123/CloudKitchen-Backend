@@ -30,11 +30,8 @@ public class RestaurantService {
 
     public boolean deleteRestaurantById(Long restaurantId) {
         boolean exists = isExistsByRestaurantId(restaurantId);
-        if(!exists) {
-            return false;
-        } else {
-            restaurantRepository.deleteById(restaurantId);
-            return true;
-        }
+        if(!exists) return false;
+        restaurantRepository.deleteById(restaurantId);
+        return true;
     }
 }

@@ -31,7 +31,7 @@ public class RestaurantService {
     public boolean deleteRestaurantById(Long restaurantId) {
         boolean exists = isExistsByRestaurantId(restaurantId);
         if(!exists) {
-            throw new ResourceNotFoundException("Restaurant not found with id : " + restaurantId);
+            return false;
         } else {
             restaurantRepository.deleteById(restaurantId);
             return true;
